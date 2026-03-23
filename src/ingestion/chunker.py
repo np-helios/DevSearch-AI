@@ -1,6 +1,5 @@
 import ast
 
-
 def chunk_python_file(file_content):
     chunks = []
 
@@ -13,12 +12,8 @@ def chunk_python_file(file_content):
                 if chunk:
                     chunks.append(chunk)
 
-        # 🔥 fallback if no chunks found
-        if not chunks:
-            chunks.append(file_content)
-
     except Exception as e:
-        print(f"AST parsing failed: {e}")
-        chunks.append(file_content)
+        # Ignore invalid files safely
+        return []
 
     return chunks
