@@ -1,8 +1,7 @@
 from qdrant_client import QdrantClient
 from qdrant_client.models import VectorParams, Distance, PointStruct
 
-# Initialize Qdrant (local in-memory)
-client = QdrantClient(":memory:")
+client = QdrantClient(path="qdrant_data")
 
 COLLECTION_NAME = "codebase"
 
@@ -19,12 +18,15 @@ def store_embeddings(chunks, embeddings):
         points.append(
             PointStruct(
                 id=i,
-                vector=vector,
-                payload={"text": chunk}
+                vector=vector.tolist(),
+                payload={
+                    "code": chunk["code"],
+                    "name": chunk["name"],
+                    "type": chunk["type"],
+                    "department": chunk.get("department", "general"),
+                    "access_level": chunk.get("access_level", "employee")
+                }
             )
         )
 
-    client.upsert(
-        collection_name=COLLECTION_NAME,
-        points=points
-    )
+    client.upsert(collection_name=COLLECTION_NAME, points=points)

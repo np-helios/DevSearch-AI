@@ -1,2 +1,9 @@
 fastembed
 qdrant-client
+fastapi
+uvicorn
+streamlit
+sentence-transformers
+qdrant-client
+ollama
+torch
