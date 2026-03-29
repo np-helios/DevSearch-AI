@@ -4,6 +4,7 @@ fastapi
 uvicorn
 streamlit
 sentence-transformers
-qdrant-client
 ollama
 torch
+pypdf
+python-docx
