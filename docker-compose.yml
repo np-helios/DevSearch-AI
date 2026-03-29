@@ -1,0 +1,44 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: devsearch-backend
+    environment:
+      OLLAMA_HOST: ${OLLAMA_HOST:-http://ollama:11434}
+    ports:
+      - "8000:8000"
+    volumes:
+      - qdrant_data:/app/qdrant_data
+      - audit_logs:/app/logs
+      - uploaded_docs:/app/data/uploads
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./devsearch-ui
+      dockerfile: Dockerfile
+      args:
+        VITE_API_BASE: /api
+    container_name: devsearch-frontend
+    depends_on:
+      - backend
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: devsearch-ollama
+    profiles: ["llm"]
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+
+volumes:
+  qdrant_data:
+  audit_logs:
+  uploaded_docs:
+  ollama_data:

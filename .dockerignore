@@ -1,0 +1,11 @@
+venv
+__pycache__
+*.pyc
+.git
+.DS_Store
+node_modules
+devsearch-ui/node_modules
+devsearch-ui/dist
+qdrant_data
+logs
+data/uploads
