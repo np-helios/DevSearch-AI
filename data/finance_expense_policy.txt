@@ -1,0 +1,5 @@
+Finance Expense Reimbursement Policy
+
+Finance and managers can review reimbursement limits for employee travel and equipment.
+Expenses above 25000 INR require finance approval before reimbursement.
+Original receipts must be retained for audit purposes.

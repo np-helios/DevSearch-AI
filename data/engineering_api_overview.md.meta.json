@@ -1,0 +1,7 @@
+{
+  "title": "Engineering API Overview",
+  "department": "engineering",
+  "classification": "internal",
+  "allowed_roles": ["employee", "manager", "admin"],
+  "summary": "Overview of an internal engineering API available to general employees."
+}

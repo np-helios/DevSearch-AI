@@ -1,0 +1,7 @@
+{
+  "title": "HR Leave Policy",
+  "department": "hr",
+  "classification": "restricted",
+  "allowed_roles": ["hr", "manager", "admin"],
+  "summary": "Restricted leave policy for HR staff and managers."
+}

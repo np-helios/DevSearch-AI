@@ -1,0 +1,7 @@
+{
+  "title": "Finance Expense Reimbursement Policy",
+  "department": "finance",
+  "classification": "restricted",
+  "allowed_roles": ["finance", "manager", "admin"],
+  "summary": "Restricted finance guidance for reimbursements and approvals."
+}
