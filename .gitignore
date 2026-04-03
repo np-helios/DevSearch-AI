@@ -12,3 +12,4 @@ qdrant_data/
 logs/
 data/uploads/
 *.sqlite
+.env
