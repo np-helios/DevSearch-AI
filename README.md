@@ -1,5 +1,5 @@
 # DevSearch-AI
-
+https://drive.google.com/file/d/14jZeSxrDhtY4hODCaGKluAQGpxPLxOoI/view?usp=sharing
 Local-first internal company knowledge assistant with:
 - authenticated local users
 - role-based document access
